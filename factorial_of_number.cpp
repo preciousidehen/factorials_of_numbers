@@ -10,9 +10,10 @@ program : this program finds the factorial of a number by asking the
 using namespace std;
 
 int factorial(int num) {
-	if(num != 1) {
-		num--;
-		return num * factorial(num);
+	if(num == 1 || num == 0) {
+		return 1;	
+	}else {
+		return num * factorial(num - 1);
 	}
 }
 int main() {
@@ -25,5 +26,5 @@ int main() {
 		cout<<"Enter a valid input: ";
 		cin>>num;
 	}
-	cout<<"The factorial of "<<num<<" is "<<factorial(num + 1);
+	cout<<num<<"! = "<<factorial(num);
 }
